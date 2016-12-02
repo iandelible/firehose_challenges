@@ -25,7 +25,7 @@ node3 = LinkedListNode.new(12, node2)
 print_values(node3)
 
 
-class Stack
+class Stack                                   #takes linkedlink and makes it a stack
     attr_reader :data
     
     def initialize
@@ -46,6 +46,8 @@ class Stack
       return pull_top
     end
 end
+
+#after stack, you dont need to remember about linkedlist to reverse...
 
 # Creates a new Stack object
 stack = Stack.new
@@ -70,16 +72,16 @@ puts stack.pop
 # => nil
 
 
-def reverse_list(list)
+def reverse_stack(stack)          
     s = Stack.new
 
-    while list
-        s.push(list.value)              #pushes the list into a stack 
-        list = list.next_node           #reassigns list to the "next_node"
+#   while (temp = stack.data) != nil    #assignment and a check on same line, assignment returns values assigned, other languages doesnt return assignment or true 
+    while stack.data != nil   
+        s.push(stack.pop)              
     end
                   
-    return s.data                       #.data can be called upon because of attr_reader in the Stack class
+    return s                       #.data can be called upon because of attr_reader in the Stack class
 end
 
-revlist = reverse_list(node3)
+revlist = reverse_list(node3)           
 print_values(revlist)
