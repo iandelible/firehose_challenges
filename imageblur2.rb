@@ -37,8 +37,7 @@ class Image
                 end
             end
         end
-        # return coordinates?
-        
+       
         # then transform coordinates 
         coordinates.each do |coord|
             row_index,col_index = coord #coord is array, 5 variables = an array
