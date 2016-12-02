@@ -45,7 +45,21 @@ class Stack                                   #takes linkedlink and makes it a s
       @data = @data.next_node                   #reassigns @data with the node
       return pull_top
     end
+    
+    def reverse!
+      #
+    end 
+    
+    def print_stack
+      print_values(@data)
+    end
 end
+
+ some_stack = Stack.new
+ some_stack.print_stack
+ some_stack.reverse! # gets reversed...
+ some_stack.print_stack
+ 
 
 #after stack, you dont need to remember about linkedlist to reverse...
 
