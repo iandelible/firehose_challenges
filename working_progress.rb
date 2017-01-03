@@ -1,19 +1,9 @@
-class Image
-
-    def initialize (pixel)
-        @pixel = pixel
-    end 
-
+class Pillow 
+  attr_accessor :size, :shape
     
-    def output_image
-        puts "#{@pixel}"
-    end
-end 
-
-image = Image.new([
-    [0,0,0,0],
-    [0,1,0,0],
-    [0,0,0,1],
-    [0,0,0,0]
-    ])
-image.output_image
+  def initialize(size, shape)
+    @size = size
+    @shape = shape
+  end
+  
+end

@@ -32,7 +32,7 @@ def reverse_list(list, previous = nil)
     list = save_old_node_values                 #reassigns and makes new list with the remembered values {list now looks like 99 -> 37 -> nil}
   end                                           #{previous looks like 12 -> nil} {list looks 99->37->nil so it will loop again}
   
-  return previous                               #previous should contain original values reversed when list = nil
+  return previous                               l
 end
 
 revlist = reverse_list(node3)
