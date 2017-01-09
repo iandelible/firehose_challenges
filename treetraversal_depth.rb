@@ -9,21 +9,22 @@ class Tree
     @children = children
   end
   
-  def depth_check(num)
+  def contains?(num)
     #check if the first payload is the intended node
     if num == self.payload
-      return puts "#{self} has value of #{num}"
-    else
-      #move to child element(s)
+      return true
+    else 
+      #move on to child elements and then check if child is the intended node
       if self.children != nil
         self.children.each do |child|
-          depth_check(child)
+          #check each child against the intended number
+          if child.contains?(num)
+            return true
+          end
         end
       end
     end
-    
   end
-
 end
 
 
@@ -41,4 +42,4 @@ shallow_fifth_node = Tree.new(5, [ninth_node])
 # The "Trunk" of the tree
 trunk   = Tree.new(2, [seventh_node, shallow_fifth_node])
 
-trunk.depth_check(7)
+trunk.contains?(11)
