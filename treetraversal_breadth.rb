@@ -21,11 +21,12 @@ class Tree
     end
     #if queue has content, check the content
     while queue != nil do
+      #pull off queue
       element = queue.dequeue
       #check element
       if element.payload == num
         return true
-      #else queue child
+      #else queue element's child
       else
         element.children.each do |child|
           queue.enqueue(child)
