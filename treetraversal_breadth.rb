@@ -19,14 +19,15 @@ class Tree
           queue.enqueue(child)
       end
     end
-    #if queue has content, check the content
-    while queue != nil do
+    
+    #see if the queue has content
+    while queue.queue.length > 0    # old idea: while queue != nil do this only checks if queue object exists
       #pull off queue
       element = queue.dequeue
       #check element
       if element.payload == num
         return true
-      #else queue element's child
+      #else put into the queue the element's child
       else
         element.children.each do |child|
           queue.enqueue(child)
@@ -34,11 +35,10 @@ class Tree
       end
     end
   end
-  
-
 end
 
 class MyQueue
+  attr_reader :queue
   def initialize
     @queue = []
   end
